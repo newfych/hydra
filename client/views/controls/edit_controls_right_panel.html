@@ -1,0 +1,47 @@
+<template name="editControlsRightPanel">
+    <div class="col-sm-3">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>Current control</p>
+                <select id="controls-list" class="form-control">
+                  {{#each controls}}
+                    {{> controlSelect}}
+                  {{/each}}
+                </select>
+                <a id="change-text-button" class="btn btn-primary btn-block"><span>Change control text</span></a>
+                <div id="change-text-div" style="display: none">
+                    <input id="change-text-input" class="form-control" type="text" name="textName">
+                    <div class="btn-group btn-group-justified">
+                        <a id="cancel-change-text" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
+                        <a id="change-text" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span></a>
+                    </div>
+                </div>
+                <p>Control width</p>
+                <select id="control-width" class="form-control">
+                        {{> widthSelect}}
+                </select>
+                <p>Control height</p>
+                <select id="control-height" class="form-control">
+                    {{> heightSelect}}
+                </select>
+                <div id="change-x-div">
+                    <div class="btn-group btn-group-justified">
+                        <a id="x-minus" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                        <a id="x-plus" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                </div>
+                <div id="change-y-div">
+                    <div class="btn-group btn-group-justified">
+                        <a id="y-plus" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-down"></span></a>
+                        <a id="y-minus" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                    </div>
+                </div>
+                <div class="scrollbar">
+                    <div class="inner">
+                        <!--place your content here-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

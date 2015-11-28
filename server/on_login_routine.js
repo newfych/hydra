@@ -1,5 +1,5 @@
 Accounts.onLogin(function(user){
-    var user = user.user.username;
+    var user = user.username;
     if (!Checks.findOne({username: user})) {
         Checks.insert({username: user, status: true});
         Screens.insert({

@@ -1,0 +1,39 @@
+<template name="editScreensRightPanel">
+    <div class="col-sm-3">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>Current screen</p>
+                <select id="screens-list" class="form-control">
+                    {{#each screens}}
+                        {{> screenSelect}}
+                    {{/each}}
+                </select>
+                <a id="create-screen-button" class="btn btn-primary btn-block"><span>Create new screen</span></a>
+                <div id="create-screen-div" style="display: none">
+                    <input id="create-screen-input" class="form-control" type="text" name="screenName" placeholder="Enter screen name">
+                    <div class="btn-toolbar">
+                        <a id="cancel-create-screen" class="btn btn-danger"><span>Cancel</span></a>
+                        <a id="create-screen" class="btn btn-primary pull-right"><span>Create</span></a>
+                    </div>
+                </div>
+                <a id="rename-screen-button" class="btn btn-primary btn-block disabled"><span>Rename current screen</span></a>
+                <div id="rename-screen-div" style="display: none">
+                    <input id="rename-screen-input" class="form-control" type="text" name="screenRename">
+                    <div class="btn-toolbar">
+                        <a id="rename-screen" class="btn btn-danger"><span>Rename</span></a>
+                        <a id="cancel-rename-screen" class="btn btn-primary pull-right"><span>Cancel</span></a>
+                    </div>
+                </div>
+                <a id="delete-screen-button" class="btn btn-primary btn-block disabled"><span>Delete current screen</span></a>
+                <div id="delete-screen-div" style="display: none">
+                    <div class="btn-toolbar">
+                        <a id="delete-screen" class="btn btn-danger"><span>Delete</span></a>
+                        <a id="cancel-delete-screen" class="btn btn-primary pull-right"><span>Cancel</span></a>
+                    </div>
+                </div>
+                <a id="edit-screen-button" class="btn btn-primary btn-block"><span>Edit current screen</span></a>
+                <a id="switch-screen-button" class="btn btn-primary btn-block"><span>Switch to current screen</span></a>
+            </div>
+        </div>
+    </div>
+</template>
