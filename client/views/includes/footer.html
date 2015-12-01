@@ -1,7 +1,11 @@
 <template name="footer">
-  <footer class="footer">
-    <div>
-        <p class="pull-center footer-text">&copy; Rusinov Alexandr 2015</p>
+
+    {{#if currentUser}}
+    {{else}}
+    <div class="row">
+    <footer class="footer">
+            <p class="text-center footer-text">&copy; Rusinov Alexandr 2015</p>
+    </footer>
     </div>
-  </footer>
+    {{/if}}
 </template>

@@ -1,24 +1,31 @@
 <template name="header">
-<div class="row">
-    <div class="">
-        <ul class="nav nav-tabs">
-    {{#if currentUser}}
-        <li>{{>loginButtons}}</li>
-        <li><a href="{{pathFor 'mainScreen'}}">main screen</a></li>
-        <li><a href="{{pathFor 'screenList'}}">screens</a></li>
-        <li><a href="{{pathFor 'editScreen'}}">edit</a></li>
-        <li role="presentation" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
-                Dropdown <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="{{pathFor 'editScreen'}}">Hui</a></li>
+    <div class="row">
+        <div class="dropdown-wrap boxed-velvet custom-dropdown max-width top-menu">
+            <ul class="dropdown clearfix float-right">
+                <li class="first"><a href="{{pathFor 'mainScreen'}}"><span>Home</span></a></li>
+                <li><a href="#"><span>About Us</span></a>
+                    <ul>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Contacts</a>
+                            <ul>
+                                <li><a href="#">Gallery images</a></li>
+                                <li><a href="#">OneByOne Slider</a></li>
+                                <li><a href="#">Video in header</a></li>
+                                <li><a href="#">Image & Video Slider</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#"><span>Settings</span></a>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Copyright</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{pathFor 'registerPage'}}"><span>Register</span></a></li>
+                <li class="last"><a href="{{pathFor 'loginPage'}}"><span>Log In</span></a></li>
             </ul>
-        </li>
-    {{else}}
-            <li>{{>loginButtons}}</li>
-    {{/if}}
-        </ul>
+        </div>
     </div>
-</div>
 </template>
