@@ -6,7 +6,7 @@ Template.loginPage.events({
         var email = t.find('#login-email').value
             , password = t.find('#login-password').value;
 
-        // Trim and validate your fields here.... 
+        // Trim and validate your fields here....
 
         // If validation passes, supply the appropriate fields to the
         // Meteor.loginWithPassword() function.
@@ -25,3 +25,14 @@ Template.loginPage.events({
         return false;
     }
 });
+
+function validateString(str){
+    var trimmed = $.trim(str);
+    var cleaned = trimmed.replace(/[\|&;\$%@"<>\(\)\+,]/g, "");
+    if (cleaned != trimmed){
+        return false;
+    }
+    else {
+        return cleaned;
+    }
+}

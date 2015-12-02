@@ -63,13 +63,26 @@ CSS STRUCTURE:
     margin-top: 8%;
 }
 *:focus {
-    outline: 0;
+    outline: 0 none;
 }
-.float-right{
+.float-left{
+    float: left;
+}.float-right{
     float: right;
 }
+ .padding-top-button{
+     padding-top: 12px;
+ }
 .max-width{
     width: 100%;
+}
+.add-comment.add-comment-velvet.styled .field_text-0,
+.add-comment.add-comment-velvet.styled .field_select-0{
+    float: none;
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 100%;
+    position: relative;
 }
 .footer {
     position: absolute;

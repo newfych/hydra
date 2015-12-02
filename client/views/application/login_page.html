@@ -4,25 +4,28 @@
         </div>
         <div class="col-sm-4">
             <div class="add-comment add-comment-velvet styled" id="addcomments">
-                <div class="add-comment-title"><h3>Login</h3></div>
+                <div class="add-comment-title"><h3>LLLogin</h3></div>
                 <div class="comment-form">
-                    <form action="#" method="post" id="commentForm" class="ajax_form">
+                    <form action="#" method="post" id="login-form" class="ajax_form">
                         <div class="form-inner">
                             <div class="field_text">
-                                <label for="input-email" class="label_title">Email:</label>
-                                <input type="text" name="email" id="input-email" value="" class="inputtext input_middle required" autofocus/>
+                                <label for="login-email" class="label_title">Email:</label>
+                                <input type="text" name="email" id="login-email" value="" class="inputtext input_middle required" autofocus/>
                             </div>
                             <div class="clear"></div>
-                            <div class="field_text field_textarea">
+                            <div class="Email is incorrect"></div>
+                            <div class="field_text-0">
                                 <div id="password_buttons" class="edit_buttons"></div>
-                                <label for="input-password" class="label_title">Password:</label>
-                                <input type="text" name="password" id="input-password" value="" class="inputtext input_middle required" />
+                                <label for="login-password" class="label_title">Password:</label>
+                                <input type="text" name="password" id="login-password" value="" class="inputtext input_middle required" />
                             </div>
+                            <div class="clear"></div>
                             <div class="clear"></div>
                         </div>
 
                         <div class="rowSubmit">
-                            <a onclick="document.getElementById('commentForm').reset();return false" href="#" class="link-reset btn btn-black"><span>Discard</span></a>
+                            <a class="float-left padding-top-button">Forgot password?</a>
+                            <a onclick="document.getElementById('login-form').reset();return false" href="#" class="link-reset btn btn-black"><span>Discard</span></a>
                             <span class="btn"><input type="submit" id="send" value="Log in" /></span>
                         </div>
                     </form>
