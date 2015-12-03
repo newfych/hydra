@@ -2429,6 +2429,7 @@ input[type="password"]:focus{
  }
 .padding-top-button{
     padding-top: 12px;
+    padding-left: 30px;
 }
 .max-width{
     width: 100%;
