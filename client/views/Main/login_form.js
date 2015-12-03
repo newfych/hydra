@@ -1,19 +1,23 @@
-Template.mainScreen.rendered = function() {
+Template.loginForm.rendered = function() {
     Session.set('loginState', 'login');
 }
-Template.mainScreen.events({
+Template.loginForm.events({
     'click #register-button' : function(){
 
         if (getLoginState() == 'login'){
             $('#forgot-password').hide();
+            $('#discard-button').show();
             $('#confirm-div').show();
-            $('#register-button-span').text('Login');
+            $('#login-form-header').text('Register');
+            $('#register-button-span').text('Back');
             $('#login-button').val('Register');
             Session.set('loginState', 'register')
         }
         else  if (getLoginState() == 'register'){
             $('#forgot-password').show();
+            $('#discard-button').hide();
             $('#confirm-div').hide();
+            $('#login-form-header').text('Login');
             $('#register-button-span').text('Register');
             $('#login-button').val('Login');
             Session.set('loginState', 'login')
@@ -21,7 +25,7 @@ Template.mainScreen.events({
     }
 });
 
-Template.mainScreen.events({
+Template.loginForm.events({
     'submit #login-form' : function(e, t){
         e.preventDefault();
         console.log('Accept pressed');
