@@ -28,7 +28,6 @@ Template.loginForm.events({
 Template.loginForm.events({
     'submit #login-form' : function(e, t){
         e.preventDefault();
-        console.log('Accept pressed');
         // retrieve the input field values
         var email = $.trim($('#login-email').val());
         var password = $.trim($('#login-password').val());
@@ -70,7 +69,8 @@ function getLoginState(){
     return Session.get('loginState');
 }
 function isEmail(email) {
-    var pattern = /^[+a-z0-9_.-]+@[a-z0-9.-]+\.[a-z]{2,6}$/i;
+    //var pattern = /^[+a-z0-9_.-]+@[a-z0-9.-]+\.[a-z]{2,6}$/i;
+    var pattern = /^[+a-z0-9_.-]$/i;
     var s = email.search(pattern);
     return s;
 }
@@ -88,11 +88,11 @@ function isValidEmail(email){
 }
 function isValidString(str){
     var cleaned = str.replace(/[\|&;\$%@"<>\(\)\+,]/g, '');
-    console.log('Pass ' + cleaned);
     if (cleaned == '') {
         $('#password-alert').text('* Password is empty');
         return false
-    } else if (cleaned.length < 2) {
+    //} else if (cleaned.length < 6) {
+    } else if (cleaned.length < 1) {
         $('#password-alert').text('* Password too short');
         return false
     } else if (cleaned != str) {
