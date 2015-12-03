@@ -24,14 +24,20 @@ Template.loginPage.events({
 Template.loginPage.events({
     'submit #login-form' : function(e, t){
         e.preventDefault();
+        console.log('Accept pressed');
         // retrieve the input field values
-        var email = t.find('#login-email').value;
-        var password = t.find('#login-password').value;
-        if (!isEmail(validateString(email))){
-            $('#email-alert').text('* Email is incorrect')
+        var email = $.trim($('#login-email').val());
+        var password = $.trim($('#login-password').val());
+        if (email != ''){
+            if (isEmail(email) != 0){
+                $('#email-alert').text('* Email is incorrect')
+            }
+            else {
+                $('#email-alert').text('Email is Ok')
+            }
         }
         else {
-            $('#email-alert').text('')
+            $('#email-alert').text('* Email is empty')
         }
 
         // Trim and validate your fields here....
@@ -59,12 +65,13 @@ function getLoginState(){
 }
 
 function isEmail(email) {
-    var regex = /^(([^<>()[]\.,;:s@"]+(.[^<>()[]\.,;:s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/igm;
-    return  regex.test(email);
+    console.log(email);
+    var pattern = /^[+a-z0-9_.-]+@[a-z0-9.-]+\.[a-z]{2,6}$/i;
+    var s = email.search(pattern);
+    return s;
 }
 
-
-function validateString(str){
+function isValidString(str){
     var trimmed = $.trim(str);
     var cleaned = trimmed.replace(/[\|&;\$%"<>\(\)\+,]/g, "");
     if (cleaned != trimmed){
